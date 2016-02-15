@@ -1,5 +1,5 @@
 class SuitcasesController < ApplicationController
-  before_action :set_suitcase, only: [:show, :edit, :update]
+  before_action :set_suitcase, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show]
   
   def index
@@ -54,6 +54,12 @@ class SuitcasesController < ApplicationController
       render :edit
     end
   end
+  
+  def destroy
+    @suitcase.destroy
+    redirect_to suitcases_path, notice: "Deleted..."
+  end
+
   
   private
     def set_suitcase
