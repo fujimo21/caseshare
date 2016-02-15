@@ -1,0 +1,72 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		Create your beautiful place
+	</div>
+	<div class="panel-body">
+		<div class="container">
+			
+			<%= form_for @suitcase do |f| %>
+
+				<div class="row">
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Suitcase Type</label>
+							<%= f.select :case_type, [["Soft Case","Soft Case"], ["Hard Case","Hard Case"], ["Leather Case","Leather Case"]], id: "case_type", prompt: "Select...", class: "form-control" %>
+						</div>
+					</div>
+
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Suitcase Size</label>
+							<%= f.select :case_size, [["S size","S size"], ["M size","M size"], ["L size","L size"]],prompt: "Select...", class: "form-control" %>
+						</div>
+					</div>
+
+					<div class="col-md-4 text-center">
+						<div class="form-group">
+							<br>
+							<label>
+								<%= f.check_box :has_key %> Key
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label>Summary</label>
+							<%= f.text_area :summary, rows: 5, placeholder: "Tell about your suitcase", class: "form-control" %>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label>Price for one day</label>
+							<div class="input-group">
+								<div class="input-group-addon">$</div>
+									<%= f.text_field :price, placeholder: "eg. 500 yen", class: "form-control" %>
+							</div>	
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<%= f.check_box :active %> Active
+						</div>
+					</div>
+				</div>
+
+				<div class="actions">
+					<%= f.submit "Save", class: "btn btn-primary" %>
+				</div>
+
+			<% end %>
+
+		</div>
+	</div>
+</div>

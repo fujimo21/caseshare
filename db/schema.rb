@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160211135051) do
+ActiveRecord::Schema.define(version: 20160211142341) do
+
+  create_table "suitcases", force: :cascade do |t|
+    t.string   "case_type"
+    t.string   "case_size"
+    t.boolean  "has_key"
+    t.text     "summary"
+    t.integer  "price"
+    t.boolean  "active"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "suitcases", ["user_id"], name: "index_suitcases_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
