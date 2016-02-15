@@ -1,5 +1,5 @@
 class SuitcasesController < ApplicationController
-  before_action :set_room, only: [:shoe, :edit, :update]
+  before_action :set_suitcase, only: [:show, :edit, :update]
   before_action :authenticate_user!, except: [:show]
   
   def index
@@ -7,7 +7,7 @@ class SuitcasesController < ApplicationController
   end
 
   def show
-    @suitcases = Suitcase.find(params[:id])
+    @photos = @suitcase.photos
   end
 
   def new
@@ -15,29 +15,49 @@ class SuitcasesController < ApplicationController
   end
 
   def create
-    @suitcases = current_user.suitcases.build(suitcase_params)
+    @suitcase = current_user.suitcases.build(suitcase_params)
 
-    if @suitcases.save 
-      redirect_to @suitcases, notice: "Saved..."
+    if @suitcase.save
+      
+      if params[:images]
+        params[:images].each do |image|
+          @suitcase.photos.create(image: image)
+        end
+      end
+      
+      @photos = @suitcase.photos
+      redirect_to edit_suitcase_path(@suitcase), notice: "Saved..."
     else
       render :new
     end
   end
 
   def edit
+    if current_user.id == @suitcase.user.id
+      @photos = @suitcase.photos
+    else
+      redirect_to root_path, notice: "You don't have permission."
+    end
   end
 
   def update
-    if @suitcases.update(suitcase_params)
-      redirect_to @suitcases, notice: "Updated..."
+    if @suitcase.update(suitcase_params)
+      
+      if params[:images]
+        params[:images].each do |image|
+          @suitcase.photos.create(image: image)
+        end
+      end
+      
+      redirect_to edit_suitcase_path(@suitcase), notice: "Updated..."
     else
       render :edit
     end
   end
   
   private
-    def set_room
-      @suitcases = Suitcase.find(params[:id])
+    def set_suitcase
+      @suitcase = Suitcase.find(params[:id])
     end
     
     def suitcase_params
