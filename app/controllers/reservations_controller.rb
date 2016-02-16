@@ -25,6 +25,14 @@ class ReservationsController < ApplicationController
 
 		redirect_to @reservation.suitcase, notice: "予約されました。"
 	end
+	
+	def your_trips
+	  @trips = current_user.reservations
+	end
+	
+	def your_reservations
+	  @suitcases = current_user.suitcases
+	end
 
 	private
 	

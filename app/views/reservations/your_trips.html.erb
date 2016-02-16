@@ -1,0 +1,41 @@
+<div class="row">
+	<div class="col-md-3">
+		<ul class="sidebar-list">
+			<li class="sidebar-item"><%= link_to "掲載中のスーツケース", suitcases_path, class: "sidebar-link" %></li>
+			<li class="sidebar-item"><%= link_to "貸す予定", your_reservations_path, class: "sidebar-link" %></li>
+			<li class="sidebar-item"><%= link_to "借りる予定", your_trips_path, class: "sidebar-link active" %></li>
+		</ul>
+	</div>
+	<div class="col-md-9">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Your Trips
+			</div>
+			<div class="panel-body">
+				
+				<% @trips.each do |trip| %>
+					<div class="row">
+						<div class="col-md-2">
+							<%= trip.start_date.strftime('%v') %>
+						</div>	
+						<div class="col-md-6">
+							<%= link_to suitcase_path(trip.suitcase) do %>
+								<%= image_tag trip.suitcase.photos[0].image.url(:thumb) if trip.suitcase.photos.length > 0 %>
+							<% end %>
+						</div>	
+						<div class="col-md-2">
+							<%= link_to user_path(trip.suitcase.user) do %>
+								<%= image_tag avatar_url(trip.suitcase.user), class: "img-circle avatar-medium" %>
+							<% end %>	
+						</div>	
+						<div class="col-md-2 right">
+							<h4><i class="fa fa-yen"></i><%= trip.total %></h4>
+						</div>	
+					</div>
+					<hr>
+				<% end %>
+
+			</div>
+		</div>
+	</div>
+</div>
