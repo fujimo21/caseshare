@@ -30,14 +30,16 @@ gem 'paperclip'
 
 gem 'jquery-ui-rails'
 
+gem 'private_pub'
+gem 'thin'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
-#group :development do
-  #gem 'web-console', '~> 2.0'
-  #gem 'spring'
-#end
+group :development do
+  gem 'pry-byebug'
+end
 

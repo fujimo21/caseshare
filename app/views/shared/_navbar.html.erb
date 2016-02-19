@@ -24,9 +24,9 @@
             </a>
 
             <ul class="dropdown-menu">
-              <li><%= link_to "Your Listings", rooms_path %></li>
-              <li><%= link_to "Your Reservations", your_reservations_path %></li>
-              <li><%= link_to "Your Trips", your_trips_path %></li>
+              <li><%= link_to "掲載中のスーツケース", suitcases_path %></li>
+              <li><%= link_to "貸す予定", your_reservations_path %></li>
+              <li><%= link_to "借りる予定", your_trips_path %></li>
               <li><a href="#">Wish Lists</a></li>
               <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
               <li role="separator" class="divider"></li>
@@ -37,10 +37,14 @@
         <% end %>
         
         <li>
-          <a href="#"><i class="fa fa-envelope-o"></i> Messages</a>
+          <%= link_to conversations_path do %>
+            <i class="fa fa-envelope-o"></i> メッセージ</a>
+          <% end %>
         </li>
         <li>
-          <a href="#"><i class="fa fa-suitcase"></i> Rent your Suitcaset</a>
+          <%= link_to new_suitcase_path do %>
+            <i class="fa fa-suitcase"></i> スーツケースを貸す</a>
+          <% end %>
         </li>
         
       </ul>

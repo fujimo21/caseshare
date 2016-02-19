@@ -8,6 +8,11 @@ class SuitcasesController < ApplicationController
 
   def show
     @photos = @suitcase.photos
+    
+    @booked = Reservation.where("suitcase_id = ? AND user_id = ?", @suitcase.id, current_user.id).present? if current_user
+    
+    @reviews = @suitcase.reviews
+    @hasReview = @reviews.find_by(user_id: current_user.id) if current_user
   end
 
   def new

@@ -15,7 +15,8 @@
 			<div class="col-md-8">
 				<div class="row">
 					<div class="col-md-3 text-center">
-						<%= image_tag avatar_url(@suitcase.user), class: "img-circle avatar-large" %><br><br>
+						<%= link_to image_tag(avatar_url(@suitcase.user), class: "img-circle avatar-large"), @suitcase.user %>
+						<br><br>
 						<%= @suitcase.user.fullname %>
 					</div>
 
@@ -58,7 +59,7 @@
 		<!-- About -->
 		<div class="row">
 			<div class="col-md-12">
-				<h2>About This Suitcase</h2>
+				<h2>このスーツケースについて</h2>
 				<p><%= @suitcase.summary %></p>
 			</div>
 		</div>
@@ -98,7 +99,32 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- Reviews -->
+		<div class="row">
+			<div class="col-md-12">
+				<h3>レビュー <span id="average_rating"></span> (<%= @reviews.count %>)</h3>
+				<div class="container">
+					<div>
+						<%= render 'reviews/form' if @booked && !@hasReview %>
+					</div>
+					<div>
+						<%= render 'reviews/list' %>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
 
 
 	</div>
 </div>
+
+<script>
+	$('#average_rating').raty({
+		path: '/assets',
+		readOnly: true,
+		score: <%= @suitcase.average_rating %>
+	});
+</script>

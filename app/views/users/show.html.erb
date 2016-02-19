@@ -1,13 +1,18 @@
 <div class="row">
 	<div class="col-md-3">
 		<div class="center">
-			<%= image_tag avatar_url(@user), class: "avatar-full" %>
+			<%= link_to image_tag(avatar_url(@user), class: "avatar-full"), @user %>
+			<% if current_user != @user %>
+				<div class="row-space-2">
+					<%= link_to "Send Message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: "btn btn-primary wide" %>
+				</div>
+			<% end %>
 		</div>
 		<div class="panel panel-default">
 			<div class="panel-heading">Verification</div>	
 			<div class="panel-body">
-				Email Address<br>
-				Phone Number
+				メールアドレス<br>
+				電話番号
 			</div>
 		</div>
 	</div>
@@ -19,7 +24,7 @@
 			<%= @user.description %>
 		</div>
 
-		<h4>Suitcases (<%= @suitcases.length %>)</h4><br>
+		<h4><%= @user.fullname%>のスーツケース (<%= @suitcases.length %>)</h4><br>
 
 		<div class="row">
 			
@@ -27,16 +32,38 @@
 				<div class="col-md-4">
 					<div class="panel panel-default">
 						<div class="panel-heading preview">
-							<%= image_tag suitcase.photos[0].image.url(:medium) %>
+							<%= link_to image_tag(suitcase.photos[0].image.url(:medium)), suitcase  %>
 						</div>
 						<div class="panel-body">
-							
+							<%= link_to "このスーツケースを見る", suitcase %>
 						</div>
 					</div>
 				</div>
 			<% end %>
 
 		</div>
+		
+		<h4>Reviews</h4><br>
+
+		<% @suitcases.each do |suitcase| %>
+			<% if !suitcase.reviews.blank? %>
+
+				<% suitcase.reviews.each do |review| %>
+					<div class="row">
+						<div class="col-md-2 text-center">
+							<%= link_to image_tag avatar_url(review.user), class: "img-circle avatar-medium" %><br>
+							<%= review.user.fullname %>
+						</div>
+						<div class="col-md-10">
+							<!--%= link_to suitcase.listing_name, suitcase %><br-->
+							<%= review.comment %><br>
+							<%= review.created_at.strftime("%v") %>
+						</div>
+					</div>
+				<% end %>
+
+			<% end %>
+		<% end %>
 
 	</div>
 </div>

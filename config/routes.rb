@@ -17,6 +17,14 @@ Rails.application.routes.draw do
     resources :reservations, only: [:create]  
   end
   
+  resources :conversations, only: [:index, :create] do
+    resources :messages, only: [:index, :create]
+  end
+  
+  resources :suitcases do
+    resources :reviews, only: [:create, :destroy]
+  end
+  
   get '/preload' => 'reservations#preload'
   get '/preview' => 'reservations#preview'
   get '/your_trips' => 'reservations#your_trips'
