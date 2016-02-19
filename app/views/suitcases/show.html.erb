@@ -4,6 +4,7 @@
 		<!-- Image -->
 		<div class="row">
 			<div class="col-md-12">
+				<h4><%= @suitcase.listing_name %></h4>
 				<%= image_tag @photos[0].image.url(), class: "img-responsive" if @photos.length > 0 %>
 			</div>
 		</div>
@@ -21,6 +22,7 @@
 					</div>
 
 					<div class="col-md-9">
+						<br>
 
 						<div class="row text-center row-space-1">
 							<div class="col-sm-3">

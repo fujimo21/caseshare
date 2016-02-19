@@ -72,6 +72,6 @@ class SuitcasesController < ApplicationController
     end
     
     def suitcase_params
-      params.require(:suitcase).permit(:case_type, :case_size, :has_key, :summary, :price, :active)
+      params.require(:suitcase).permit(:case_type, :case_size, :has_key, :listing_name,:summary, :price, :active)
     end
 end

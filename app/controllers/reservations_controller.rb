@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-	before_action :authenticate_user!
+	before_action :authenticate_user!, except: [:notify]
 	
 	def preload
 		suitcase = Suitcase.find(params[:suitcase_id])
@@ -23,11 +23,45 @@ class ReservationsController < ApplicationController
 	def create
 		@reservation = current_user.reservations.create(reservation_params)
 
-		redirect_to @reservation.suitcase, notice: "予約されました。"
+		if @reservation
+			# send request to PayPal
+			values = {
+				business: 'y.fujomoto-facilitator@gmail.com',
+				cmd: '_xclick',
+				upload: 1,
+				notify_url: 'https://web-service-fujimo21.c9users.io/notify',
+				amount: @reservation.total,
+				item_name: @reservation.id,
+				item_number: @reservation.id,
+				quantity: '1',
+				return: 'https://web-service-fujimo21.c9users.io/your_trips'
+			}
+
+			redirect_to "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
+		else
+			redirect_to @reservation.suitcase, alert: "何か問題が発生しました。"
+		end 
 	end
 	
+	protect_from_forgery except: [:notify]
+	def notify
+		params.permit!
+		status = params[:payment_status]
+
+		reservation = Reservation.find(params[:item_number])
+
+		if status = "Completed"
+			reservation.update_attributes status: true
+		else
+			reservation.destroy
+		end
+
+		render nothing: true
+	end
+	
+	protect_from_forgery except: [:your_trips]
 	def your_trips
-	  @trips = current_user.reservations
+	  @trips = current_user.reservations.where("status = ?", true)
 	end
 	
 	def your_reservations

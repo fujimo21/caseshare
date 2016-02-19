@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160217143516) do
+ActiveRecord::Schema.define(version: 20160219130246) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20160217143516) do
     t.integer  "total"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.boolean  "status"
   end
 
   add_index "reservations", ["suitcase_id"], name: "index_reservations_on_suitcase_id"
@@ -77,8 +78,9 @@ ActiveRecord::Schema.define(version: 20160217143516) do
     t.integer  "price"
     t.boolean  "active"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "listing_name"
   end
 
   add_index "suitcases", ["user_id"], name: "index_suitcases_on_user_id"

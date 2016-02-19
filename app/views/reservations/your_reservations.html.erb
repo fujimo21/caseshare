@@ -9,31 +9,33 @@
 	<div class="col-md-9">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				Your Reservations
+				借りる予定
 			</div>
 			<div class="panel-body">
 				<% @suitcases.each do |suitcase| %>
 					
 					<% suitcase.reservations.each do |reservation| %>
-						<div class="row">
-							<div class="col-md-2">
-								<%= reservation.start_date.strftime('%v') %>
-							</div>	
-							<div class="col-md-6">
-								<%= link_to suitcase_path(reservation.suitcase) do %>
-									<%= image_tag reservation.suitcase.photos[0].image.url(:thumb) if reservation.suitcase.photos.length > 0 %>
-								<% end %>
-							</div>	
-							<div class="col-md-2">
-								<%= link_to user_path(reservation.user) do %>
-									<%= image_tag avatar_url(reservation.user), class: "img-circle avatar-medium" %>
-								<% end %>	
-							</div>	
-							<div class="col-md-2 right">
-								<h4><i class="fa fa-yen"></i><%= reservation.total %></h4>
-							</div>	
-						</div>
-						<hr>
+						<% if reservation.status %>
+							<div class="row">
+								<div class="col-md-2">
+									<%= reservation.start_date.strftime('%v') %>
+								</div>	
+								<div class="col-md-6">
+									<%= link_to suitcase_path(reservation.suitcase) do %>
+										<%= image_tag reservation.suitcase.photos[0].image.url(:thumb) if reservation.suitcase.photos.length > 0 %>
+									<% end %>
+								</div>	
+								<div class="col-md-2">
+									<%= link_to user_path(reservation.user) do %>
+										<%= image_tag avatar_url(reservation.user), class: "img-circle avatar-medium" %>
+									<% end %>	
+								</div>	
+								<div class="col-md-2 right">
+									<h4><i class="fa fa-yen"></i><%= reservation.total %></h4>
+								</div>	
+							</div>
+							<hr>
+						<% end %>
 					<% end %>
 
 				<% end %>

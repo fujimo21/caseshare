@@ -11,14 +11,14 @@
 					<div class="col-md-4 select">
 						<div class="form-group">
 							<label>Suitcase Type</label>
-							<%= f.select :case_type, [["Soft Case","Soft Case"], ["Hard Case","Hard Case"], ["Leather Case","Leather Case"]], id: "case_type", prompt: "Select...", class: "form-control" %>
+							<%= f.select :case_type, [["ソフトタイプ","ソフトタイプ"], ["ハードタイプ","ハードタイプ"], ["レザータイプ","レザータイプ"]], id: "case_type", prompt: "選択する", class: "form-control" %>
 						</div>
 					</div>
 
 					<div class="col-md-4 select">
 						<div class="form-group">
 							<label>Suitcase Size</label>
-							<%= f.select :case_size, [["S size","S size"], ["M size","M size"], ["L size","L size"]],prompt: "Select...", class: "form-control" %>
+							<%= f.select :case_size, [["～2日","～2日"], ["3，4日","3，4日"], ["5日～","5日～"]],prompt: "選択する", class: "form-control" %>
 						</div>
 					</div>
 
@@ -31,12 +31,21 @@
 						</div>
 					</div>
 				</div>
+				
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label>名前</label>
+							<%= f.text_field :listing_name, placeholder: "例：ジョセフ", class: "form-control" %>
+						</div>
+					</div>
+				</div>
 
 				<div class="row">
 					<div class="col-md-12">
 						<div class="form-group">
-							<label>Summary</label>
-							<%= f.text_area :summary, rows: 5, placeholder: "Tell about your suitcase", class: "form-control" %>
+							<label>説明</label>
+							<%= f.text_area :summary, rows: 5, placeholder: "例：12ヵ国制覇した相棒です。鍵は壊れました。", class: "form-control" %>
 						</div>
 					</div>
 				</div>
@@ -44,10 +53,10 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="form-group">
-							<label>Price for one day</label>
+							<label>1日の料金</label>
 							<div class="input-group">
 								<div class="input-group-addon"><i class="fa fa-yen"></i></div>
-									<%= f.text_field :price, placeholder: "eg. 500 yen", class: "form-control" %>
+									<%= f.text_field :price, placeholder: "例：500", class: "form-control" %>
 							</div>	
 						</div>
 					</div>
