@@ -1,0 +1,9 @@
+
+<%= form_for(current_user.likes.find_by(suitcase_id: @suitcase.id),
+             html: { method: :delete },
+             remote: true) do |f| %>
+  <%= f.submit "お気に入り", class: "btn btn-warning"%>
+
+<% end %>
+
+<!--i class="fa fa-star"></i-->

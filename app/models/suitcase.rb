@@ -3,6 +3,8 @@ class Suitcase < ActiveRecord::Base
   has_many :photos
   has_many :reservations
   has_many :reviews
+  has_many :likes, foreign_key: "suitcase_id"
+  has_many :like_users, class_name: "User", through: :likes, source: :user, dependent: :destroy
   
   validates :case_type, presence: true
   validates :case_size, presence: true

@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    お気に入りのスーツケース
+  </div>
+	<div class="panel-body">
+    <div class="col-md-6">
+    	<% @suitcases.each do |suitcase| %>
+    		
+    		<div class="col-md-4">
+    			<div class="panel panel-default">
+    				<div class="panel-heading preview">
+    					<%= image_tag suitcase.photos[0].image.url(:medium) if suitcase.photos.length > 0 %>
+    				</div>
+    				<div class="panel-body">
+    					<!--%= link_to image_tag(avatar_url(room.user), user_path(suitcase.user), class: "img-circle avatar-small" %>&nbsp;-->
+    					<%= link_to suitcase.listing_name, suitcase %>
+    					<i class="fa fa-star"></i><%= suitcase.likes.length %>
+    					<!--%= render 'suitcases/like_form', suitcase: @suitcase %-->
+    				</div>
+    			</div>
+    		</div>
+    
+    	<% end %>
+    </div>
+  </div>
+</div>

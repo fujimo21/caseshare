@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :suitcases
   resources :photos
+  resources :likes, only: [:index, :create, :destroy]
   
   resources :suitcases do
     resources :reservations, only: [:create]  

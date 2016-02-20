@@ -1,0 +1,7 @@
+<div id="like_form", class="col-md-4">
+  <% if current_user.like?(@suitcase) %>
+    <%= render 'suitcases/unlike' %>
+  <% else %>
+    <%= render 'suitcases/like' %>
+  <% end %>
+</div>

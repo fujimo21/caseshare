@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   has_many :suitcases
   has_many :reservations
   has_many :reviews
+  has_many :likes
+  has_many :likes, foreign_key: "user_id"
+  has_many :like_suitcases, class_name: "Suitcase", through: :likes, source: :suitcase, dependent: :destroy
 
   def self.from_omniauth(auth)
     user = User.where(email: auth.info.email).first
@@ -26,6 +29,19 @@ class User < ActiveRecord::Base
           user.password = Devise.friendly_token[0,20]
       end
     end
+  end
+  
+  def like(suitcase)
+    likes.find_or_create_by(suitcase_id: suitcase.id)
+  end
+  
+  def unlike(suitcase)
+    like = likes.find_by(suitcase_id: suitcase.id)
+    like.destroy if like
+  end
+  
+  def like?(suitcase)
+    like_suitcases.include?(suitcase)
   end
 
 end

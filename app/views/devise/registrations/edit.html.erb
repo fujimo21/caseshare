@@ -26,6 +26,10 @@
             <div class="form-group">
               <%= f.text_field :phone_number, :placeholder => "電話番号（入力すると”信頼証明”としてプロフィール画面に表示されます）", :class => 'form-control' %>
             </div>
+            
+            <div class="form-group">
+						  <%= f.text_field :address, placeholder: "住所（送付先・返却先情報として使います）", :class => "form-control" %>
+					  </div>
 
             <div class="form-group">
               <%= f.text_area :description, rows: 5, cols: 25,  :placeholder => "自己紹介", :class => 'form-control' %>

@@ -3,8 +3,16 @@
 		
 		<!-- Image -->
 		<div class="row">
+			<div class="col-md-2">
+				<h2 class="text-center"><%= @suitcase.listing_name %></h2>
+			</div>
+			<div class="col-md-4">
+				<br><%= render 'like_form'%>
+			</div>
+		</div>
+		<br>
+		<div class="row">
 			<div class="col-md-12">
-				<h4><%= @suitcase.listing_name %></h4>
 				<%= image_tag @photos[0].image.url(), class: "img-responsive" if @photos.length > 0 %>
 			</div>
 		</div>
@@ -29,7 +37,7 @@
 								<i class="fa fa-suitcase fa-2x"></i>
 							</div>
 							<div class="col-sm-3">
-								<i class="fa fa-expand fa-2x"></i>
+								<i class="fa fa-folder-open fa-2x"></i>
 							</div>
 							<div class="col-sm-3">
 								<i class="fa fa-lock fa-2x"></i>
@@ -57,14 +65,22 @@
 				<%= render 'reservations/form' %>
 			</div>
 		</div>
+		
+		<hr>
 
 		<!-- About -->
 		<div class="row">
 			<div class="col-md-12">
-				<h2>このスーツケースについて</h2>
-				<p><%= @suitcase.summary %></p>
+				<div class="panel-heading">
+					このスーツケースについて
+				</div>
+				<div class="panel-body">
+					<%= @suitcase.summary %>
+				</div>
 			</div>
 		</div>
+		
+		<hr>
 
 		<!-- Carousel -->
 		<div class="row">

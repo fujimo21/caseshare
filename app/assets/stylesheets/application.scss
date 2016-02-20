@@ -29,18 +29,23 @@ label {
 }
 
 .navbar-default .navbar-brand {
-  color: #FF5A5F;
+  color: #000080;
   font-size: 2em;
   font-weight: 400;
 }
 
 .btn-primary.btn {
-  border: 1px solid #ff5a5f;
+  border: 1px solid #000080;
   border-radius: 2px;
   font-weight: bold;
-  background-color: #ff5a5f;
+  //background-color: #ff5a5f;
+  background-color: #000080;
   color: #fff;
   padding: 10px 25px 10px 25px;
+}
+
+.btn-warning.btn {
+  font-weight: bold;
 }
 
 .btn-primary.btn:hover, .btn-primary.btn:focus {
@@ -300,4 +305,14 @@ input[type="checkbox"]:checked:before {
   color: #fff;
   vertical-align: middle;
   display: table-cell;
+}
+
+.cover {
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+}
+
+.cover h2 {
+  font-weight: 700;
 }

@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @suitcases = Suitcase.limit(3)
+    @suitcases = Suitcase.all.order("updated_at DESC").limit(12)
   end
   
   def search
