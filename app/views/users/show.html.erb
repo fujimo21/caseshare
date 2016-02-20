@@ -9,10 +9,13 @@
 			<% end %>
 		</div>
 		<div class="panel panel-default">
-			<div class="panel-heading">Verification</div>	
+			<div class="panel-heading">信頼証明</div>	
 			<div class="panel-body">
-				メールアドレス<br>
-				電話番号
+				<!--Facebook " "<br>
+				メールアドレス " "<br-->
+				<% if @user.phone_number.present? %>
+				 電話番号：<%= @user.phone_number %>
+				<% end %>
 			</div>
 		</div>
 	</div>
@@ -43,7 +46,7 @@
 
 		</div>
 		
-		<h4>Reviews</h4><br>
+		<h4>評価</h4><br>
 
 		<% @suitcases.each do |suitcase| %>
 			<% if !suitcase.reviews.blank? %>

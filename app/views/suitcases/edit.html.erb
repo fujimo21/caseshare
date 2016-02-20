@@ -1,9 +1,11 @@
 <%= render 'form' %>
 
-<div class="container">
-  <div class="row">
-  	<div class="col-md-4">
-      <%= link_to "Delete", @suitcase, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary", style: "float-right" %>
+<div class="panel-body">
+  <div class="container">
+    <div class="row">
+    	<div class="col-md-4">
+        <%= link_to "掲載をやめる", @suitcase, method: :delete, data: { confirm: "データは削除されます。掲載をやめますか？" }, class: "btn btn-primary", style: "float-right" %>
+      </div>
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
-		Create your beautiful place
+		あなたの相棒を貸してあげましょう！
 	</div>
 	<div class="panel-body">
 		<div class="container">
@@ -10,14 +10,14 @@
 				<div class="row">
 					<div class="col-md-4 select">
 						<div class="form-group">
-							<label>Suitcase Type</label>
+							<label>タイプ</label>
 							<%= f.select :case_type, [["ソフトタイプ","ソフトタイプ"], ["ハードタイプ","ハードタイプ"], ["レザータイプ","レザータイプ"]], id: "case_type", prompt: "選択する", class: "form-control" %>
 						</div>
 					</div>
 
 					<div class="col-md-4 select">
 						<div class="form-group">
-							<label>Suitcase Size</label>
+							<label>サイズ</label>
 							<%= f.select :case_size, [["～2日","～2日"], ["3，4日","3，4日"], ["5日～","5日～"]],prompt: "選択する", class: "form-control" %>
 						</div>
 					</div>
@@ -26,7 +26,7 @@
 						<div class="form-group">
 							<br>
 							<label>
-								<%= f.check_box :has_key %> Key
+								<%= f.check_box :has_key %> 鍵付き
 							</label>
 						</div>
 					</div>
@@ -44,7 +44,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="form-group">
-							<label>説明</label>
+							<label>このスーツケースについて</label>
 							<%= f.text_area :summary, rows: 5, placeholder: "例：12ヵ国制覇した相棒です。鍵は壊れました。", class: "form-control" %>
 						</div>
 					</div>
@@ -56,7 +56,7 @@
 							<label>1日の料金</label>
 							<div class="input-group">
 								<div class="input-group-addon"><i class="fa fa-yen"></i></div>
-									<%= f.text_field :price, placeholder: "例：500", class: "form-control" %>
+									<%= f.text_field :price, placeholder: "例：580", class: "form-control" %>
 							</div>	
 						</div>
 					</div>
@@ -66,7 +66,7 @@
 					<div class="col-md-4">
 						<div class="form-group">							
 							<span class="btn btn-default btn-file">
-							    <i class="fa fa-cloud-upload fa-lg"></i> Upload Photos 
+							    <i class="fa fa-cloud-upload fa-lg"></i> 写真をアップする 
 							    <%= file_field_tag "images[]", type: :file, multiple: true %>
 							</span>
 						</div>		
@@ -76,15 +76,15 @@
 				<div id="photos"><%= render 'photos/list' %></div>
 
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-6">
 						<div class="form-group">
-							<%= f.check_box :active %> Active
+							<%= f.check_box :active %> アクティブ（チェックを入れなければ検索されません）
 						</div>
 					</div>
 				</div>
 
 				<div class="actions">
-					<%= f.submit "Save", class: "btn btn-primary" %>
+					<%= f.submit "保存する", class: "btn btn-primary" %>
 				</div>
 
 			<% end %>

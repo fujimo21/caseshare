@@ -31,7 +31,7 @@ class SuitcasesController < ApplicationController
       end
       
       @photos = @suitcase.photos
-      redirect_to edit_suitcase_path(@suitcase), notice: "Saved..."
+      redirect_to edit_suitcase_path(@suitcase), notice: "保存しました"
     else
       render :new
     end
@@ -54,7 +54,7 @@ class SuitcasesController < ApplicationController
         end
       end
       
-      redirect_to edit_suitcase_path(@suitcase), notice: "Updated..."
+      redirect_to edit_suitcase_path(@suitcase), notice: "アップデート完了"
     else
       render :edit
     end
@@ -62,7 +62,7 @@ class SuitcasesController < ApplicationController
   
   def destroy
     @suitcase.destroy
-    redirect_to suitcases_path, notice: "Deleted..."
+    redirect_to suitcases_path, notice: "削除しました"
   end
 
   

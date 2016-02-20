@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">caseShare</a>
+      <%= link_to "caseShare", root_path, class: "navbar-brand" %>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
@@ -27,11 +27,11 @@
               <li><%= link_to "掲載中のスーツケース", suitcases_path %></li>
               <li><%= link_to "貸す予定", your_reservations_path %></li>
               <li><%= link_to "借りる予定", your_trips_path %></li>
-              <li><a href="#">Wish Lists</a></li>
-              <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+              <li><a href="#">お気に入り</a></li>
+              <li><%= link_to "プロフィール編集", edit_user_registration_path %></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Account Setting</a></li>
-              <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+              <!--li><a href="#">アカウント設定</a></li-->
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>
         <% end %>
@@ -44,6 +44,11 @@
         <li>
           <%= link_to new_suitcase_path do %>
             <i class="fa fa-suitcase"></i> スーツケースを貸す</a>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to help_path do %>
+            <i class="fa fa-pencil"></i> お問い合わせ・ご意見</a>
           <% end %>
         </li>
         

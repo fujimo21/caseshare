@@ -3,14 +3,14 @@
 	<div class="col-md-3 text-center">
 		<%= image_tag avatar_url(@other), class: "img-circle avatar-medium" %><br>
 		<strong><%= @other.fullname %></strong>
-		<%= link_to "View Profile", @other, class: "btn btn-default wide" %>
+		<%= link_to "プルフィールを見る", @other, class: "btn btn-default wide" %>
 	</div>
 
 	<div class="col-md-9">
 		
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				Conversation with <%= @other.fullname %>
+				<%= @other.fullname %>とのメッセージ
 			</div>
 			<div class="panel-body">
 				<div class="container">

@@ -6,7 +6,18 @@
 body {  
   color: #565a5c;
   background-color: #F8F8F8;
+  font-weight: bold;
+  font-size: 17px;
   font-family:"Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+label {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .container {
@@ -56,7 +67,12 @@ body {
   color: #565a5c;
   background-color: #edefed;
   font-size: 18px;
-  font-weight: 400
+  font-weight: 400;
+  font-weight: bold;
+}
+
+.panel-default .panel-body label {
+  font-weight: bold;
 }
 
 .row-space-1 {
@@ -168,6 +184,7 @@ input[type="checkbox"] {
   width: 1.25em;
   margin-bottom: -0.25em;
   margin-right: 5px;
+  background-color: white;
   vertical-align: top;
   border: 1px solid #c4c4c4;
   border-radius: 2px;
@@ -246,7 +263,7 @@ input[type="checkbox"]:checked:before {
   background-color: #F4F4F5;
 }
 
-#wrapper { 
+/*#wrapper { 
   width:960px;
   margin:0 auto;
 }
@@ -265,7 +282,7 @@ input[type="checkbox"]:checked:before {
 
 #article {
   width:560px;
-}
+}*/
 
 .discovery-card {
   background-size: cover;

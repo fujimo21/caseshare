@@ -1,0 +1,91 @@
+<div id="wrapper">
+
+	<div id="article">
+		
+		<div class="row">
+			<%= search_form_for @search, url: search_path do |f| %>
+				
+				<div class="row">
+					<div class="col-md-4">
+						<%= text_field_tag :start_date, params[:start_date], placeholder: "開始日", class: "form-control" %>
+					</div>
+					<div class="col-md-4">
+						<%= text_field_tag :end_date, params[:end_date], placeholder: "返却日", class: "form-control" %>
+					</div>
+					<div class="col-md-4">
+						<%= check_box_tag "q[has_hey_eq]", true %> <a5>鍵付き</a5>
+					</div>
+				</div>
+
+				<hr>
+
+				<div class="row">
+					<div class="col-md-4">
+						<%= check_box_tag "q[case_type_eq_any][]", "ソフトタイプ" %> ソフトタイプ
+					</div>
+					<div class="col-md-4">
+						<%= check_box_tag "q[case_type_eq_any][]", "ハードタイプ" %> ハードタイプ
+					</div>
+					<div class="col-md-4">
+						<%= check_box_tag "q[case_type_eq_any][]", "レザータイプ" %> レザータイプ
+					</div>
+				</div>
+
+				<hr>
+
+				<br>
+
+				<div class="row">
+					<%= f.submit "検索する", class: "btn btn-primary" %>
+				</div>
+
+			<% end %>
+
+			<hr>
+
+			<div class="row">
+				<% @arrSuitcases.each do |suitcase| %>
+					
+					<div class="col-md-4">
+						<div class="panel panel-default">
+							<div class="panel-heading preview">
+								<%= image_tag suitcase.photos[0].image.url(:medium) if suitcase.photos.length > 0 %>
+							</div>
+							<div class="panel-body">
+								<%= link_to suitcase.listing_name, suitcase %>
+							</div>
+						</div>
+					</div>
+
+				<% end %>
+			</div>
+
+
+		</div>
+
+	</div>
+
+</div>
+
+<script>
+	$(function() {
+		$("#start_date").datepicker({
+			dateFormat: 'yy-mm-dd(D)',
+			minDate: 0,
+			maxDate: '3m',
+			onSelect: function(selected) {
+				$('#end_date').datepicker("option", "minDate", selected);
+				$('#end_date').attr('disabled', false);
+			}
+		});
+
+		$("#end_date").datepicker({
+			dateFormat: 'yy-mm-dd(D)',
+			minDate: 0,
+			maxDate: '3m',
+			onSelect: function(selected) {
+				$('#start_date').datepicker("option", "maxDate", selected);
+			}
+		});
+	})
+</script>
