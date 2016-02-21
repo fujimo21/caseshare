@@ -26,47 +26,58 @@
 		<div class="description row-space-3">
 			<%= @user.description %>
 		</div>
-
-		<h4><%= @user.fullname%>のスーツケース (<%= @suitcases.length %>)</h4><br>
-
-		<div class="row">
-			
-			<% @suitcases.each do |suitcase| %>
-				<div class="col-md-4">
-					<div class="panel panel-default">
-						<div class="panel-heading preview">
-							<%= link_to image_tag(suitcase.photos[0].image.url(:medium)), suitcase  %>
-						</div>
-						<div class="panel-body">
-							<%= link_to suitcase.listing_name, suitcase %>
-						</div>
-					</div>
-				</div>
-			<% end %>
-
-		</div>
 		
-		<h4>評価</h4><br>
-
-		<% @suitcases.each do |suitcase| %>
-			<% if !suitcase.reviews.blank? %>
-
-				<% suitcase.reviews.each do |review| %>
-					<div class="row">
-						<div class="col-md-2 text-center">
-							<%= link_to image_tag avatar_url(review.user), class: "img-circle avatar-medium" %><br>
-							<%= review.user.fullname %>
-						</div>
-						<div class="col-md-10">
-							<!--%= link_to suitcase.listing_name, suitcase %><br-->
-							<%= review.comment %><br>
-							<%= review.created_at.strftime("%v") %>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4><%= @user.fullname%>のスーツケース (<%= @suitcases.length %>)</h4>
+			</div>
+	
+			<div class="panel-body">
+				
+				<% @suitcases.each do |suitcase| %>
+					<div class="col-md-4">
+						<div class="panel panel-default">
+							<div class="panel-heading preview">
+								<%= link_to image_tag(suitcase.photos[0].image.url(:medium)), suitcase  %>
+							</div>
+							<div class="panel-body">
+								<%= link_to suitcase.listing_name, suitcase %>
+							</div>
 						</div>
 					</div>
 				<% end %>
+	
+			</div>
+		</div>
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4>評価</h4>
+			</div>
+			
+			<div class="panel-body">
 
-			<% end %>
-		<% end %>
+				<% @suitcases.each do |suitcase| %>
+					<% if !suitcase.reviews.blank? %>
+		
+						<% suitcase.reviews.each do |review| %>
+							<div class="row">
+								<div class="col-md-2 text-center">
+									<%= link_to image_tag avatar_url(review.user), class: "img-circle avatar-medium" %><br>
+									<%= review.user.fullname %>
+								</div>
+								<div class="col-md-10">
+									<!--%= link_to suitcase.listing_name, suitcase %><br-->
+									<%= review.comment %><br>
+									<%= review.created_at.strftime("%v") %>
+								</div>
+							</div>
+						<% end %>
+		
+					<% end %>
+				<% end %>
+				
+			</div>
 
 	</div>
 </div>

@@ -19,7 +19,8 @@
 							<%= link_to image_tag suitcase.photos[0].image.url(:thumb) if suitcase.photos.length > 0 %>
 						</div>		
 						<div class="col-md-7">
-							<h4><%= link_to suitcase.listing_name, suitcase %></h4>
+							<br>
+							<h4><strong><%= link_to suitcase.listing_name, suitcase %></strong></h4>
 						</div>		
 						<div class="col-md-3 right">
 							<%= link_to "アップデート", edit_suitcase_path(suitcase), class: "btn btn-primary" %>

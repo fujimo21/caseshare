@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
   has_many :suitcases
   has_many :reservations
   has_many :reviews
-  has_many :likes
   has_many :likes, foreign_key: "user_id"
   has_many :like_suitcases, class_name: "Suitcase", through: :likes, source: :suitcase, dependent: :destroy
 

@@ -7,6 +7,7 @@
 				<div class="container">
 					<% @conversations.each do |conversation| %>
 						<% other = conversation.sender == current_user ? conversation.recipient : conversation.sender %>
+						
 
 						<%= link_to conversation_messages_path(conversation) do %>
 
@@ -25,6 +26,7 @@
 
 						<% end %>
 					<% end %>
+					<hr>
 				</div>
 			</div>
 		</div>

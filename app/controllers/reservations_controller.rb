@@ -31,6 +31,7 @@ class ReservationsController < ApplicationController
 				upload: 1,
 				notify_url: 'https://web-service-fujimo21.c9users.io/notify',
 				amount: @reservation.total,
+				currency_code: 'JPY',
 				item_name: @reservation.id,
 				item_number: @reservation.id,
 				quantity: '1',

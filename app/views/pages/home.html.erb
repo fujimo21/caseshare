@@ -4,7 +4,7 @@
 			<div class="va-container">
 				<div class="va-middle text-center">
 					<h1><strong>caseShare</strong></h1>
-					<p>ようこそ</p>
+					<p> Share cool suitcases, get your trip style.</p>
 				</div>
 			</div>
 		</div>
@@ -12,6 +12,55 @@
 </div>
 
 <br>
+
+<div class="text-center">
+	<h2 style="color:#000080">caseShareとは</h2>
+	<p>スーツケースを眠らせていませんか？あるいは、欲しいスーツケースが高価で悩んでいませんか？</p>
+	   この二人をマッチングするサービスです。
+</div>
+<br>
+
+<div class="row">
+	<div class="col-md-5 col-md-offset-1">
+		<div class="explain">
+			<div class="ex-container-rent">
+				<div class="ex-middle text-center">
+					<br>
+					<i class="fa fa-user fa-5x" style="color:#00BFFF"></i>
+					<h2><strong>スーツケースを貸す</strong></h2>
+					<p>
+						普段使っていないスーツケースを誰かに貸してあげましょう。<br>
+						あなたの相棒は働きたがっているかもしれませんよ！
+					</p>
+					<p>
+						<%= link_to "登録", new_suitcase_path, class: "btn btn-info" %>
+					</p>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-md-5">
+		<div class="explain">
+			<div class="ex-container-lend">
+				<div class="ex-middle text-center">
+					<br>
+					<i class="fa fa-suitcase fa-5x" style="color:#FFA500"></i>
+					<h2><strong>スーツケースを借りる</strong></h2>
+					<p>
+						たまにしか使わないスーツケースを購入するのはもったいないと思いませんか？<br>
+						それなら1日500円程度で、あなたにぴったりなスーツケースを借りましょう！
+					</p>
+					<p>
+						<%= link_to "探す", search_path, class: "btn btn-warning" %>
+					</p>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <div class="text-center">
 	<h2>思い出に残る旅へ</h2>

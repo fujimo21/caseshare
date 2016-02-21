@@ -3,7 +3,7 @@
     
     <br>
     
-    <%= link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook), class: "btn btn-primary" %>
+    <%= link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook), class: "btn btn-facebook" %>
     
     <hr>
     
@@ -28,7 +28,7 @@
 
       <div class="actions">
         <%= f.submit "ログイン", :class => "btn btn-primary" %>
-        <%= link_to "パスワードを忘れたら", new_user_password_path, :class => "btn btn-primary" %>
+        <%= link_to "パスワードを忘れたら", new_user_password_path, :class => "btn btn-link" %>
       </div>
     <% end %>
   </div>

@@ -21,6 +21,7 @@
 						<div class="col-md-6">
 							<%= link_to suitcase_path(trip.suitcase) do %>
 								<%= image_tag trip.suitcase.photos[0].image.url(:thumb) if trip.suitcase.photos.length > 0 %>
+								<%= trip.suitcase.listing_name %>
 							<% end %>
 						</div>	
 						<div class="col-md-2">

@@ -44,6 +44,16 @@ label {
   padding: 10px 25px 10px 25px;
 }
 
+.btn-facebook.btn {
+  border: 1px solid #000080;
+  border-radius: 2px;
+  font-weight: bold;
+  //background-color: #ff5a5f;
+  background-color: #315096;
+  color: #fff;
+  padding: 10px 25px 10px 25px;
+}
+
 .btn-warning.btn {
   font-weight: bold;
 }
@@ -313,6 +323,26 @@ input[type="checkbox"]:checked:before {
   height: 450px;
 }
 
-.cover h2 {
-  font-weight: 700;
+.ex-container-rent {
+  display: table;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: 2px solid #00BFFF;
+  border-radius: 2px;
+}
+
+.ex-container-lend {
+  display: table;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: 2px solid #FFA500;
+  border-radius: 2px;
+}
+
+.ex-middle {
+  color: black;
+  vertical-align: middle;
+  display: table-cell;
 }
