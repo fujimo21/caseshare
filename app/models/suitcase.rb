@@ -10,7 +10,8 @@ class Suitcase < ActiveRecord::Base
   validates :case_size, presence: true
   validates :listing_name, presence: true, length: {maximum:50}
   validates :summary, presence: true, length: {maximum: 50}
-
+  
+  
   def average_rating
     reviews.count == 0 ? 0 : reviews.average(:star).round(2)
   end

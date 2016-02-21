@@ -40,8 +40,9 @@ gem 'ransack'
 
 gem 'meta-tags'
 
-gem 'carrierwave'
 gem 'cloudinary'
+
+gem 'aws-sdk'
 
 group :development, :test do
   gem 'byebug'

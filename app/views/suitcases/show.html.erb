@@ -7,7 +7,10 @@
 				<h2 class="text-center"><%= @suitcase.listing_name %></h2>
 			</div>
 			<div class="col-md-4">
-				<br><%= render 'like_form'%>
+				<br>
+				<% if current_user %>
+					<%= render 'like_form'%>
+				<% end %>
 			</div>
 		</div>
 		<br>
