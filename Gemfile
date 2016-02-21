@@ -42,7 +42,7 @@ gem 'meta-tags'
 
 gem 'cloudinary'
 
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 group :development, :test do
   gem 'byebug'
