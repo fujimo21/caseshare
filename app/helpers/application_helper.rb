@@ -22,6 +22,7 @@ module ApplicationHelper
       type: "website",
       url: "http://caseshare.herokuapp.com/",
       site_name: "caseShare",
+      image: image_url("OGP.jpg"),
       description: "素敵なスーツケースを貸す/借りるサービスです。良い旅にしましょう！",
       locale: "ja_JP"
     } 
