@@ -40,6 +40,9 @@ gem 'ransack'
 
 gem 'meta-tags'
 
+gem 'carrierwave'
+gem 'cloudinary'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
