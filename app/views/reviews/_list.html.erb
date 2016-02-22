@@ -1,5 +1,5 @@
 <% if @reviews.count == 0 %>
-	<div class="text-center"><h4>まだレビューはありません。</h4></div>
+	<div class="text-center"><h5>まだレビューはありません。</h5></div>
 <% else %>
 
 	<% @reviews.order("id desc").each do |r| %>

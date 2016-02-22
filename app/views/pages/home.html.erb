@@ -4,7 +4,8 @@
 			<div class="va-container">
 				<div class="va-middle text-center">
 					<h1><strong>caseShare</strong></h1>
-					<p> Share cool suitcases, get your trip style.</p>
+					<p>Share cool suitcases, get your trip style.</p>
+					<p>※3月中旬リリース予定です。それまでスーツケースの登録を<お待ちしております。</p>
 				</div>
 			</div>
 		</div>
@@ -50,7 +51,7 @@
 					<h2><strong>スーツケースを借りる</strong></h2>
 					<p>
 						たまにしか使わないスーツケースを購入するのはもったいないと思いませんか？<br>
-						それなら1日500円程度で、あなたにぴったりなスーツケースを借りましょう！
+						それなら、あなたにぴったりなスーツケースを探して、借りましょう！
 					</p>
 					<p>
 						<%= link_to "探す", search_path, class: "btn btn-warning" %>
@@ -64,7 +65,7 @@
 
 <div class="text-center">
 	<h2>思い出に残る旅へ</h2>
-	<p>おしゃれなスーツケースとともに、良い旅にしましょう。</p>
+	<p>おしゃれなスーツケースとともに、良い旅を！</p>
 </div>
 
 <br>
@@ -111,7 +112,7 @@
 <hr>
 
 <div class="text-center">
-	<h2>一緒に連れていくスーツケースは見つけましたか？</h2>
+	<h3>一緒に連れていくスーツケースは見つけましたか？</h3>
 	<p>旅の出発前に色々と選ぶのも楽しいですよね。普段どこかで眠っているスーツケースたちがあなたを待っているかもしれません。</p>
 </div>
 
@@ -120,13 +121,13 @@
 <%= form_tag search_path, method: :get do %>
 	<div class="row">
 		<div class="col-md-2">
-			<%= check_box_tag "q[case_type_eq_any][]", "ソフトケース" %> ソフトケース
+			<h4><%= check_box_tag "q[case_type_eq_any][]", "ソフトケース" %> ソフトケース</h4>
 		</div>
 		<div class="col-md-2">
-			<%= check_box_tag "q[case_type_eq_any][]", "ハードケース" %> ハードケース
+			<h4><%= check_box_tag "q[case_type_eq_any][]", "ハードケース" %> ハードケース</h4>
 		</div>
 		<div class="col-md-2">
-			<%= check_box_tag "q[case_type_eq_any][]", "レザーケース" %> レザーケース
+			<h4><%= check_box_tag "q[case_type_eq_any][]", "レザーケース" %> レザーケース</h4>
 		</div>
 		<div class="col-md-2">
 			<%= text_field_tag :start_date, params[:start_date], placeholder: "開始日", class: "form-control" %>

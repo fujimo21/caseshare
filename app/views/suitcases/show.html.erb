@@ -4,7 +4,7 @@
 		<!-- Image -->
 		<div class="row">
 			<div class="col-md-2">
-				<h2 class="text-center"><%= @suitcase.listing_name %></h2>
+				<h1 class="text-center"><%= @suitcase.listing_name %></h1>
 			</div>
 			<div class="col-md-4">
 				<br>
@@ -38,23 +38,17 @@
 						<div class="row text-center row-space-1">
 							<div class="col-sm-3">
 								<i class="fa fa-suitcase fa-2x"></i>
+								<br>
+								<p><%= @suitcase.case_type %></p>
 							</div>
 							<div class="col-sm-3">
 								<i class="fa fa-folder-open fa-2x"></i>
+								<br>
+								<p><%= @suitcase.case_size %></p>
 							</div>
 							<div class="col-sm-3">
 								<i class="fa fa-lock fa-2x"></i>
-							</div>
-						</div>
-
-						<div class="row text-center">
-							<div class="col-sm-3">
-								<%= @suitcase.case_type %>
-							</div>
-							<div class="col-sm-3">
-								<%= @suitcase.case_size %>
-							</div>
-							<div class="col-sm-3">
+								<br>
 								<div id="<%= 'text-line-through' if !@suitcase.has_key %>">Key</div>
 							</div>
 						</div>
@@ -121,10 +115,12 @@
 			</div>
 		</div>
 		
+		<hr>
+		
 		<!-- Reviews -->
 		<div class="row">
 			<div class="col-md-12">
-				<h3>レビュー <span id="average_rating"></span> (<%= @reviews.count %>)</h3>
+				<h4>評価 <span id="average_rating"></span> (<%= @reviews.count %>)</h4>
 				<div class="container">
 					<div>
 						<%= render 'reviews/form' if @booked && !@hasReview %>

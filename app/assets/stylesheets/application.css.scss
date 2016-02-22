@@ -2,12 +2,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "toastr";
+@import "font-awesome";
+
 
 body {  
   color: #565a5c;
   background-color: #F8F8F8;
   font-weight: bold;
-  font-size: 17px;
+  font-size: 1.4m;
   font-family:"Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
 }
 
@@ -15,13 +17,16 @@ h2 {
   font-weight: bold;
 }
 
-label {
-  font-size: 20px;
+h3 {
+  font-weight: bold;
+}
+
+h4 {
   font-weight: bold;
 }
 
 .container {
-	width: 80%;
+	width: 90%;
 }
 
 .navbar-default {
@@ -88,6 +93,14 @@ label {
 
 .panel-default .panel-body label {
   font-weight: bold;
+}
+
+.col-md-2 {
+  margin-bottom: 5px;
+}
+
+.col-md-4 {
+  margin-bottom: 5px;
 }
 
 .row-space-1 {
@@ -169,6 +182,7 @@ label {
   color: #565a5c;
   font-size: 1.1em;
   font-weight: 500;
+  //font-weight: bold;
   margin-bottom: 10px;
 }
 
@@ -326,21 +340,25 @@ input[type="checkbox"]:checked:before {
 .ex-container-rent {
   display: table;
   width: 100%;
-  height: 100%;
+  height: 400px;
   background-color: white;
   border: 2px solid #00BFFF;
   border-radius: 2px;
-  margin: 2px; 
+  margin-bottom: 5px; 
+  padding-right: 10%;
+  padding-left: 10%;
 }
 
 .ex-container-lend {
   display: table;
   width: 100%;
-  height: 100%;
+  height: 400px;
   background-color: white;
   border: 2px solid #FFA500;
   border-radius: 2px;
-  margin: 2px;
+  margin-bottom: 5px;
+  padding-right: 10%;
+  padding-left: 10%;
 }
 
 .ex-middle {
