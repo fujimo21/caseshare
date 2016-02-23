@@ -13,7 +13,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'rails_12factor', group: :production
+group :production, :staging do
+  gem 'rails_12factor'
+end
 
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'unicorn'
@@ -55,4 +57,5 @@ end
 group :development do
   gem 'pry-byebug'
 end
+
 
