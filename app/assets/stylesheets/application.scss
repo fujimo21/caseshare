@@ -9,9 +9,11 @@ body {
   color: #565a5c;
   background-color: #F8F8F8;
   font-weight: bold;
-  font-size: 1.4m;
+  font-size: 1.4em;
   font-family:"Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
 }
+
+
 
 h2 {
   font-weight: bold;
@@ -34,17 +36,16 @@ h4 {
 }
 
 .navbar-default .navbar-brand {
-  color: #000080;
+  color: #191970;
   font-size: 2em;
   font-weight: bold;
 }
-
 .btn-primary.btn {
-  border: 1px solid #000080;
+  border: 1px solid #191970;
   border-radius: 2px;
   font-weight: bold;
   //background-color: #ff5a5f;
-  background-color: #000080;
+  background-color: #191970;
   color: #fff;
   padding: 10px 25px 10px 25px;
 }
@@ -365,4 +366,19 @@ input[type="checkbox"]:checked:before {
   color: black;
   vertical-align: middle;
   display: table-cell;
+}
+
+#footer {
+  font-size: 0.5em;
+  color: white;
+  background-color: #333333;
+}
+
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li{
+  display: inline;
 }

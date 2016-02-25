@@ -10,19 +10,19 @@ module ApplicationHelper
   
   def default_meta_tags
   {
-    title:       "caseShare | スーツケースを貸そう！借りよう！",
+    title:       "CaseShared | スーツケースを貸そう！借りよう！",
     description: "素敵なスーツケースを貸す/借りるサービスです。良い旅にしましょう！",
-    keywords:    "スーツケース,キャリーケース,キャリーバッグ,シェアリングエコノミー, シェア",
+    keywords:    "スーツケース,キャリーケース,キャリーバッグ,シェアリングエコノミー, シェア、レンタル",
     icon: image_url("favicon.ico"), # favicon
     noindex: ! Rails.env.production?, # production環境以外はnoindex  
     charset: "UTF-8",
     # OGPの設定
     og: {
-      title: "caseShare | スーツケースを貸そう！借りよう！",
+      title: "CaseShared | スーツケースを貸そう！借りよう！",
       type: "website",
       url: "http://caseshare.herokuapp.com/",
-      site_name: "caseShare",
-      image: image_url("OGP.jpg"),
+      site_name: "CaseShared",
+      #image: image_url(""),
       description: "素敵なスーツケースを貸す/借りるサービスです。良い旅にしましょう！",
       locale: "ja_JP"
     } 
