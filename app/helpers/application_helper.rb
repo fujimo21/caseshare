@@ -25,7 +25,11 @@ module ApplicationHelper
       image: image_url("/assets/OGP.jpg"),
       description: "素敵なスーツケースを貸す/借りるサービスです。良い旅にしましょう！",
       locale: "ja_JP"
-    } 
+    },
+    twitter: {
+        card: "summary",
+        site: "@2_1_f",
+    }
   }
   end
   
