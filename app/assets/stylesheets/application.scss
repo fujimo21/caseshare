@@ -366,14 +366,14 @@ input[type="checkbox"]:checked:before {
   color: black;
   vertical-align: middle;
   display: table-cell;
-  position: relative;
-  bottom: 0;
 }
 
 #footer {
   font-size: 0.5em;
   color: white;
   background-color: #333333;
+  position: absolute;
+  bottom: 0;
 }
 
 ul.share-buttons{
