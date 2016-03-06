@@ -366,6 +366,8 @@ input[type="checkbox"]:checked:before {
   color: black;
   vertical-align: middle;
   display: table-cell;
+  position: relative;
+  bottom: 0;
 }
 
 #footer {

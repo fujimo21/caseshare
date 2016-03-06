@@ -53,11 +53,12 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="form-group">
-							<label>1日の料金</label>
+							<label>1日の貸出料金</label>
 							<div class="input-group">
 								<div class="input-group-addon"><i class="fa fa-yen"></i></div>
-									<%= f.text_field :price, placeholder: "例：580(半角で入力して下さい)", class: "form-control" %>
-							</div>	
+								<%= f.text_field :price, placeholder: "例：580(半角で入力して下さい)", class: "form-control" %>
+							</div>
+							（この金額から手数料が差し引かれた金額が支払われます。）
 						</div>
 					</div>
 				</div>
@@ -78,7 +79,7 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
-							<%= f.check_box :active %> アクティブ（チェックを入れると検索されるようになります）
+							<%= f.check_box :active %> アクティブ（チェックを入れると予約・検索されるようになります）
 						</div>
 					</div>
 				</div>

@@ -27,18 +27,22 @@ class ReservationsController < ApplicationController
 			# send request to PayPal
 			values = {
 				business: 'y.fujomoto-facilitator@gmail.com',
+				#business: 'y.fujomoto@gmail.com',
 				cmd: '_xclick',
 				upload: 1,
 				notify_url: 'https://web-service-fujimo21.c9users.io/notify',
+				#notify_url: 'http://http://caseshare.herokuapp.com/notify',
 				amount: @reservation.total,
 				currency_code: 'JPY',
 				item_name: @reservation.id,
 				item_number: @reservation.id,
 				quantity: '1',
 				return: 'https://web-service-fujimo21.c9users.io/your_trips'
+				#return: 'http://http://caseshare.herokuapp.com/your_trips'
 			}
 
 			redirect_to "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
+			
 		else
 			redirect_to @reservation.suitcase, alert: "何か問題が発生しました。"
 		end 
@@ -52,7 +56,15 @@ class ReservationsController < ApplicationController
 		reservation = Reservation.find(params[:item_number])
 
 		if status = "Completed"
+			
+			if status != true
+				NotificationMailer.reserve(reservation).deliver_now
+				NotificationMailer.reserved(reservation).deliver_now
+				NotificationMailer.reserve_notice(reservation).deliver_now
+			end
+			
 			reservation.update_attributes status: true
+			
 		else
 			reservation.destroy
 		end

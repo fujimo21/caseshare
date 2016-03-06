@@ -41,7 +41,7 @@ class SuitcasesController < ApplicationController
     if current_user.id == @suitcase.user.id
       @photos = @suitcase.photos
     else
-      redirect_to root_path, notice: "You don't have permission."
+      redirect_to root_path, notice: "このスーツケースはあなたには編集できません"
     end
   end
 

@@ -1,0 +1,21 @@
+予約が成立しました。
+カレンダーにアラートを登録し、
+振り込み手続きを行ってください。
+
+予約情報
+
+　お届け予定日： <%= @start_date %>
+　返却予定日： <%= @end_date %>
+　レンタル料： <%= @total %>円
+　振込額：<%= @total*0.9 %>円
+
+貸出人情報
+名前：<%= @owner.fullname %>
+アドレス：<%= @owner.email %>
+スーツケース：<%= @suitcase.listing_name %>
+
+借用者情報
+名前：<%= @user.fullname %>
+アドレス：<%= @user.email %>
+
+caseshare.herokuapp.com
