@@ -8,6 +8,7 @@
 body {  
   color: #565a5c;
   background-color: #F8F8F8;
+  //position: relative;
   font-weight: bold;
   font-size: 1.4em;
   font-family:"Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
@@ -29,6 +30,7 @@ h4 {
 
 .container {
 	width: 90%;
+	
 }
 
 .navbar-default {
@@ -372,8 +374,8 @@ footer {
   font-size: 0.5em;
   color: white;
   background-color: #333333;
-  position: absolute;
-  bottom: 0;
+  //position: absolute;
+  //bottom: 0px;
   width: 100%;
 }
 
