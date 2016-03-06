@@ -31,14 +31,14 @@ class ReservationsController < ApplicationController
 				cmd: '_xclick',
 				upload: 1,
 				#notify_url: 'https://web-service-fujimo21.c9users.io/notify',
-				notify_url: 'http://http://caseshare.herokuapp.com/notify',
+				notify_url: 'http://caseshare.herokuapp.com/notify',
 				amount: @reservation.total,
 				currency_code: 'JPY',
 				item_name: @reservation.id,
 				item_number: @reservation.id,
 				quantity: '1',
 				#return: 'https://web-service-fujimo21.c9users.io/your_trips'
-				return: 'http://http://caseshare.herokuapp.com/your_trips'
+				return: 'http://caseshare.herokuapp.com/your_trips'
 			}
 
 			redirect_to "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
