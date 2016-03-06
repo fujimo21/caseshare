@@ -12,7 +12,7 @@ module ApplicationHelper
   {
     title:       "CaseShared | スーツケースを貸そう！借りよう！",
     description: "素敵なスーツケースを貸す/借りるサービスです。良い旅にしましょう！",
-    keywords:    "スーツケース,キャリーケース,キャリーバッグ,シェアリングエコノミー, シェア、レンタル",
+    keywords:    "スーツケース,キャリーケース,キャリーバッグ,レンタル,シェアリングエコノミー, シェア",
     icon: image_url("favicon.ico"), # favicon
     noindex: ! Rails.env.production?, # production環境以外はnoindex  
     charset: "UTF-8",
