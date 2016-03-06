@@ -368,12 +368,13 @@ input[type="checkbox"]:checked:before {
   display: table-cell;
 }
 
-#footer {
+footer {
   font-size: 0.5em;
   color: white;
   background-color: #333333;
   position: absolute;
   bottom: 0;
+  width: 100%;
 }
 
 ul.share-buttons{
