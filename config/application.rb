@@ -33,8 +33,8 @@ module Caseshare
       :domain => 'http://caseshare.herokuapp.com/',
       :authentication => 'login',
       :user_name => ENV["SMTP_USER_NAME"] ,
-      #:password => ENV["SMTP_USER_PASSWORD"],
-      :password => 'dwscknbhbxyzkksj'
+      :password => 'vzfhkufvafpdjnpz'
+      #:password => 'dwscknbhbxyzkksj'
     }
   end
 end
