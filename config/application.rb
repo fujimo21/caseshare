@@ -30,9 +30,9 @@ module Caseshare
       :address => 'smtp.gmail.com',
       :port => '587',
       #:domain => 'https://web-service-fujimo21.c9users.io/',
-      :domain => 'http://caseshare.herokuapp.com/',
+      :domain => 'caseshare.herokuapp.com',
       :authentication => 'login',
-      :user_name => ENV["SMTP_USER_NAME"] ,
+      :user_name => ENV["SMTP_USER_NAME"],
       :password => 'vzfhkufvafpdjnpz'
       #:password => 'dwscknbhbxyzkksj'
     }

@@ -27,8 +27,8 @@ class NotificationMailer < ApplicationMailer
     @suitcase = Suitcase.find_by(id: reservation.suitcase_id)
     @owner = @suitcase.user
     @user = User.find_by(id: reservation.user_id)
-    @start_date = reservation.start_date.strftime('%v')
-    @end_date = reservation.end_date.strftime('%v')
+    @start_date = reservation.start_date.strftime('%Y年%m月%d日')
+    @end_date = reservation.end_date.strftime('%Y年%m月%d日')
     @total = reservation.total
     
     mail to: ENV["SMTP_USER_NAME"], subject: "予約成立"
